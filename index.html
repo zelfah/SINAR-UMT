@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SINAR@UMT — Portal Kebajikan Pelajar</title>
+<meta name="description" content="Portal kebajikan pelajar UMT — semak dan mohon bantuan dalam talian.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">
+      <div class="brand-mark">UMT</div>
+      <div class="brand-text">
+        <div class="name">SINAR<span style="color:var(--gold-light)">@UMT</span></div>
+        <div class="tag">Portal Kebajikan Pelajar</div>
+      </div>
+    </div>
+    <button class="hamburger" id="hamburgerBtn" aria-label="Buka menu">☰</button>
+    <nav class="tabs" id="navTabs">
+      <button data-tab="dashboard" class="active">Dashboard</button>
+      <button data-tab="bantuan">Bantuan &amp; Inisiatif</button>
+      <button data-tab="permohonan">Semak Permohonan</button>
+      <button data-tab="admin" id="navAdminBtn">Admin</button>
+    </nav>
+  </div>
+  <svg class="tide" viewBox="0 0 1160 20" preserveAspectRatio="none"><path d="M0 10 Q 20 0 40 10 T 80 10 T 120 10 T 160 10 T 200 10 T 240 10 T 280 10 T 320 10 T 360 10 T 400 10 T 440 10 T 480 10 T 520 10 T 560 10 T 600 10 T 640 10 T 680 10 T 720 10 T 760 10 T 800 10 T 840 10 T 880 10 T 920 10 T 960 10 T 1000 10 T 1040 10 T 1080 10 T 1120 10 T 1160 10"/></svg>
+</header>
+
+<main>
+  <section id="tab-dashboard" class="active">
+    <div class="wrap">
+      <div class="storage-banner" id="storageBanner"></div>
+
+      <div class="db-topbar">
+        <div class="db-search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+          <input id="dbSearchInput" placeholder="Cari kategori bantuan..." autocomplete="off">
+          <div class="db-search-results" id="dbSearchResults"></div>
+        </div>
+        <div class="db-topbar-right">
+          <span class="session-label mono">Sesi Akademik 2026/2027 · Semester Aktif</span>
+          <div class="bell-wrap">
+            <button class="bell-btn" id="bellBtn" aria-label="Aktiviti terkini">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 00-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 01-3.4 0"/></svg>
+              <span class="bell-dot" id="bellDot" style="display:none;"></span>
+            </button>
+            <div class="bell-panel" id="bellPanel">
+              <div class="bp-head">Aktiviti permohonan terkini</div>
+              <div id="bellPanelBody"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="kpi-row" id="kpiRow"></div>
+
+      <div class="panel-grid">
+        <div class="panel-card">
+          <h3>Trend Permohonan</h3>
+          <p class="panel-sub" id="trendRange">Memuatkan...</p>
+          <div id="trendChartHost"></div>
+        </div>
+        <div class="panel-card">
+          <h3>Mengikut Kategori Bantuan</h3>
+          <p class="panel-sub">Pecahan permohonan semasa</p>
+          <div class="donut-wrap" id="donutHost"></div>
+        </div>
+      </div>
+
+      <div class="quick-links">
+        <button class="btn btn-teal" data-goto="bantuan">Layari Bantuan &amp; Inisiatif</button>
+        <button class="btn btn-outline-navy" data-goto="permohonan">Semak Permohonan Saya</button>
+      </div>
+
+      <div class="contact-card">
+        <h3>Hal Ehwal Pelajar dan Alumni (HEPA)</h3>
+        <p class="lead-c">Ada soalan tentang kelayakan atau status permohonan? Hubungi terus pegawai berikut.</p>
+        <div class="contact-grid">
+          <div class="contact-row"><div class="who">Encik Fadli bin Mamat</div><div class="role">Ketua Pentadbiran, HEPA</div><div class="num">096334596 / 019-9845587</div></div>
+          <div class="contact-row"><div class="who">Cik Nur Aisyah binti Mustafa</div><div class="role">Penolong Pendaftar, HEPA</div><div class="num">09-6334891 / 011-17831272</div></div>
+          <div class="contact-row"><div class="who">Puan Noor Zahiah Binti Mohd Zin</div><div class="role">Pembantu Tadbir (P/O) Kanan, HEPA</div><div class="num">09-6334323 / 019-9737976</div></div>
+          <div class="contact-row"><div class="who">Cik Sufiqa Aina binti Mamat</div><div class="role">Pembantu Tadbir (P/O), HEPA</div><div class="num">09-6334128 / 018-9065027</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="tab-bantuan">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Antara bantuan yang disediakan</div>
+        <h2>Bantuan &amp; inisiatif sepanjang pengajian anda di UMT</h2>
+        <p>Pilih kategori yang berkaitan dan klik "Mohon Sekarang" untuk mengisi borang permohonan dalam talian.</p>
+      </div>
+      <div class="bantuan-grid" id="bantuanGrid"></div>
+    </div>
+  </section>
+
+  <section id="tab-permohonan">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Status permohonan</div>
+        <h2>Semak permohonan saya</h2>
+        <p>Masukkan nombor rujukan dan emel yang anda gunakan semasa memohon untuk menyemak status.</p>
+      </div>
+      <div class="lookup-card">
+        <div class="field-row">
+          <div class="field"><label for="lk-ref">Nombor rujukan</label><input id="lk-ref" type="text" placeholder="Contoh: SNR-2026-48213"></div>
+          <div class="field"><label for="lk-email">Emel yang digunakan</label><input id="lk-email" type="email" placeholder="nama@student.umt.edu.my"></div>
+        </div>
+        <button class="btn btn-teal" id="lookupBtn">Semak Status</button>
+      </div>
+      <div id="lookupResult"></div>
+    </div>
+  </section>
+
+  <section id="tab-admin">
+    <div class="wrap">
+      <div id="adminLoginView">
+        <div class="section-head">
+          <div class="eyebrow">Kakitangan HEPA sahaja</div>
+          <h2>Log masuk pentadbir</h2>
+          <p>Akaun log masuk disediakan oleh pentadbir sistem melalui Supabase Authentication.</p>
+        </div>
+        <div class="lookup-card">
+          <div class="field"><label for="admin-email">Emel</label><input id="admin-email" type="email" placeholder="nama@umt.edu.my"></div>
+          <div class="field"><label for="admin-password">Kata laluan</label><input id="admin-password" type="password"></div>
+          <button class="btn btn-teal" id="adminLoginBtn">Log Masuk</button>
+          <div class="error-text" id="adminLoginError" style="display:none;"></div>
+        </div>
+      </div>
+      <div id="adminPanelView" style="display:none;">
+        <div class="section-head" style="display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;">
+          <div>
+            <div class="eyebrow">Pentadbir HEPA</div>
+            <h2>Urus permohonan</h2>
+          </div>
+          <div style="display:flex;gap:10px;">
+            <button class="btn btn-outline-navy" id="exportBtn">Eksport Data (CSV)</button>
+            <button class="btn btn-outline-navy" id="adminLogoutBtn">Log Keluar</button>
+          </div>
+        </div>
+        <div class="admin-toolbar">
+          <input id="adminSearch" type="text" placeholder="Cari nama, no. matrik atau rujukan...">
+          <select id="adminCategoryFilter"><option value="">Semua kategori</option></select>
+          <select id="adminStatusFilter">
+            <option value="">Semua status</option>
+            <option value="Dalam Semakan">Dalam Semakan</option>
+            <option value="Diluluskan">Diluluskan</option>
+            <option value="Ditolak">Ditolak</option>
+          </select>
+        </div>
+        <div id="adminTableWrap"></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  Portal Kebajikan Pelajar — Hal Ehwal Pelajar dan Alumni, Universiti Malaysia Terengganu.
+</footer>
+
+<div class="modal-backdrop" id="modalBackdrop">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal-close" id="modalCloseBtn" aria-label="Tutup">✕</button>
+    <div id="formView">
+      <h3 id="modalTitle">Borang Permohonan Bantuan</h3>
+      <p class="modal-sub" id="modalSubtitle">Kategori bantuan</p>
+      <form id="applyForm" novalidate>
+        <div class="field" id="f-subtype" style="display:none;">
+          <label for="in-subtype">Jenis bantuan khusus</label>
+          <select id="in-subtype"></select>
+        </div>
+        <div class="field-row">
+          <div class="field" id="f-name">
+            <label for="in-name">Nama penuh</label>
+            <input id="in-name" type="text" placeholder="Contoh: Amirul bin Hassan" autocomplete="name">
+            <div class="error-text">Sila isi nama penuh.</div>
+          </div>
+          <div class="field" id="f-matric">
+            <label for="in-matric">No. matrik</label>
+            <input id="in-matric" type="text" placeholder="Contoh: UM2201234">
+            <div class="error-text">Sila isi no. matrik.</div>
+          </div>
+        </div>
+        <div class="field" id="f-faculty">
+          <label for="in-faculty">Fakulti / Pusat Pengajian</label>
+          <input id="in-faculty" type="text" placeholder="Contoh: Fakulti Sains Komputer &amp; Informatik">
+          <div class="error-text">Sila isi fakulti / pusat pengajian.</div>
+        </div>
+        <div class="field-row">
+          <div class="field" id="f-phone">
+            <label for="in-phone">No. telefon</label>
+            <input id="in-phone" type="tel" placeholder="Contoh: 013-3456789">
+            <div class="error-text">Sila isi no. telefon yang sah.</div>
+          </div>
+          <div class="field" id="f-email">
+            <label for="in-email">Emel UMT</label>
+            <input id="in-email" type="email" placeholder="nama@student.umt.edu.my">
+            <div class="error-text">Sila isi emel yang sah — simpan emel ini untuk semakan status kelak.</div>
+          </div>
+        </div>
+        <div class="field" id="f-note">
+          <label for="in-note">Catatan / sebab permohonan</label>
+          <textarea id="in-note" placeholder="Terangkan secara ringkas keperluan anda..."></textarea>
+          <div class="error-text">Sila isi catatan ringkas.</div>
+        </div>
+        <div class="field">
+          <label for="in-doc">Dokumen sokongan (pilihan)</label>
+          <input id="in-doc" type="file" accept=".pdf,.jpg,.jpeg,.png,application/pdf,image/jpeg,image/png" multiple>
+          <div class="hint">Sehingga 3 fail — PDF, JPG atau PNG sahaja, maksimum 3MB setiap fail.</div>
+          <div id="fileChipsList" class="file-chips"></div>
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn btn-outline-navy" id="cancelBtn">Batal</button>
+          <button type="submit" class="btn btn-teal">Hantar Permohonan</button>
+        </div>
+      </form>
+    </div>
+    <div id="confirmView" style="display:none;">
+      <div class="confirm-box">
+        <div class="check"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+        <h3>Permohonan berjaya dihantar</h3>
+        <p style="color:var(--ink-soft);font-size:14px;">Simpan nombor rujukan ini — bersama emel yang anda gunakan — untuk menyemak status kelak.</p>
+        <div class="ref" id="refNumberOut"></div>
+        <div class="modal-actions" style="justify-content:center;margin-top:24px;">
+          <button type="button" class="btn btn-teal" id="doneBtn">Selesai</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
